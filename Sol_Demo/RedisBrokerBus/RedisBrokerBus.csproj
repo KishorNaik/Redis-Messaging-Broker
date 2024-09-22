@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Redis Messaging Broker</Title>
-	<Version>1.0.1-beta</Version>
+	<Version>1.0.0</Version>
     <PackageProjectUrl>https://github.com/KishorNaik/Redis-Messaging-Broker</PackageProjectUrl>
     <RepositoryUrl>https://github.com/KishorNaik/Redis-Messaging-Broker</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
