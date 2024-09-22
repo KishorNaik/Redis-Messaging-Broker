@@ -6,13 +6,14 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Redis Messaging Broker</Title>
-	<Version>1.0.0</Version>
+	<Version>1.0.1-beta</Version>
     <PackageProjectUrl>https://github.com/KishorNaik/Redis-Messaging-Broker</PackageProjectUrl>
     <RepositoryUrl>https://github.com/KishorNaik/Redis-Messaging-Broker</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>redis, messaging, broker, pub-sub, request-reply</PackageTags>
     <Description>This NuGet package provides a robust Redis Messaging Broker implementation, leveraging both the Publish/Subscribe and Request/Reply patterns. Designed for seamless integration with .NET applications, it enables efficient asynchronous communication between distributed components. The Publish/Subscribe pattern allows for decoupled message broadcasting to multiple subscribers, ensuring scalability and flexibility. Meanwhile, the Request/Reply pattern facilitates direct, asynchronous communication, making it ideal for scenarios requiring immediate feedback or acknowledgment. This package is perfect for developers looking to build responsive, event-driven systems with Redis as the backbone</Description>
-    <PackAsTool>True</PackAsTool>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -20,6 +21,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Include="..\..\LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	  <None Include="..\..\README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>

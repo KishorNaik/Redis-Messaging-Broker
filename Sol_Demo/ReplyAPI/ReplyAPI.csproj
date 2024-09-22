@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="RedisBrokerBus" Version="1.0.1-beta" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
@@ -16,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Message\Message.csproj" />
-    <ProjectReference Include="..\RedisBrokerBus\RedisBrokerBus.csproj" />
   </ItemGroup>
 
 </Project>
