@@ -24,7 +24,7 @@ public class ResponderHostedService<TRequest, TResponse> : IHostedService
             {
                 using (var innerScope = _serviceProvider.CreateScope())
                 {
-                    var handler = innerScope.ServiceProvider.GetRequiredService<IResponder<TRequest, TResponse>>();
+                    var handler = innerScope.ServiceProvider.GetRequiredService<IRedisResponder<TRequest, TResponse>>();
                     return await handler.HandleAsync(request);
                 }
             });

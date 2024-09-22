@@ -61,12 +61,12 @@ public class RedisConfiguration
     }
 
     public void AddReply<TRequest, TResponse, THandler>(string channel)
-    where THandler : class, IResponder<TRequest, TResponse>
+    where THandler : class, IRedisResponder<TRequest, TResponse>
     {
         if (channel is null)
             throw new ArgumentNullException(nameof(channel));
 
-        _services.AddScoped<IResponder<TRequest, TResponse>, THandler>();
+        _services.AddScoped<IRedisResponder<TRequest, TResponse>, THandler>();
         _services.AddSingleton<IHostedService, ResponderHostedService<TRequest, TResponse>>();
         _services.Configure<ConsumerOptions>(options => options.Channel = channel);
     }

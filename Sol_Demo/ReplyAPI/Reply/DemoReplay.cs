@@ -3,9 +3,9 @@ using RedisBrokerBus.Core.Interface.Responders;
 
 namespace ReplyAPI.Reply;
 
-public class DemoReplay : IResponder<DemoRequest, DemoResponse>
+public class DemoReplay : IRedisResponder<DemoRequest, DemoResponse>
 {
-    Task<DemoResponse> IResponder<DemoRequest, DemoResponse>.HandleAsync(DemoRequest request)
+    Task<DemoResponse> IRedisResponder<DemoRequest, DemoResponse>.HandleAsync(DemoRequest request)
     {
         var response = new DemoResponse();
         response.Id = Guid.NewGuid();

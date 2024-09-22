@@ -1,6 +1,6 @@
 ﻿namespace RedisBrokerBus.Core.Interface.Responders;
 
-public interface IResponder<TRequest, TResponse>
+public interface IRedisResponder<TRequest, TResponse>
 {
     Task<TResponse> HandleAsync(TRequest request);
 }

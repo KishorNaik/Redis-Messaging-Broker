@@ -1,7 +1,6 @@
 ﻿using Message.Request_Response;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RedisBrokerBus.Core.Broker.Producer_Consumer;
 using RedisBrokerBus.Core.Broker.Request_Response;
 
 namespace RequestAPI.Controllers
