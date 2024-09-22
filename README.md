@@ -155,6 +155,7 @@ builder.Services.AddRedisMessageBroker("localhost:6379", (config) =>
 - `builder.Services.AddRedisMessageBroker("localhost:6379", (config) => { ... });`: This line registers the Redis Message Broker with the specified Redis server address (localhost:6379).
 - `config.AddSubscriber();`: This line enables the subscriber bus, allowing the application to subscribe to messages on Redis channels.
 - `config.AddConsumer<DemoConsumer, DemoMessage>("demo-channel");`: This line adds the `DemoConsumer` class as a consumer and specifies the `DemoMessage` message class in the generic parameter for the `demo-channel`.
+- You can add multiple consumers with different channel names.
 
 ### 10: Run both projects and call the `Producer` API.
 To send a message from the Producer and have the Consumer receive it, you can use the following curl command:
@@ -304,6 +305,7 @@ builder.Services.AddRedisMessageBroker("localhost:6379", (config) =>
 - `config.AddResponse();`: This line enables the reply bus, allowing the application to subscribe to messages on Redis channels.
 - `config.AddReply<DemoRequest, DemoResponse, DemoReplay>("request-channel");` 
 - `config.AddReply<DemoRequest, DemoResponse, DemoReplay>("request-channel");`: This line registers the DemoReply class as a responder for the DemoRequest and DemoResponse message types on the specified request-channel.
+- You can add multiple replys with different channel names.
 
 Step 10: Run Both Projects and Call the Request API.
 To send a message from the Request API and have the Reply API receive it and send a response, you can use the following curl command:
