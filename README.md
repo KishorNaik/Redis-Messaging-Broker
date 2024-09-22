@@ -1,5 +1,5 @@
 # Redis-Messaging-Broker
-This package offers a comprehensive Redis Messaging Broker, utilizing both the Publish/Subscribe and Request/Reply patterns. It integrates seamlessly with .NET applications, enabling efficient asynchronous communication through the Publish/Subscribe pattern, which supports decoupled message broadcasting to multiple subscribers, enhancing scalability and flexibility. Additionally, the Request/Reply pattern facilitates direct, asynchronous communication, ideal for scenarios requiring immediate feedback or acknowledgment. This package is perfect for developers aiming to build responsive, event-driven systems with Redis as the core messaging infrastructure.
+This package offers a comprehensive Redis Messaging Broker, utilizing both the Publish/Subscribe and Request/Reply patterns. It integrates seamlessly with .NET applications, enabling efficient asynchronous communication through the Publish/Subscribe pattern, which supports decoupled message broadcasting to multiple subscribers, enhancing scalability and flexibility. Additionally, the Request/Reply pattern facilitates direct, synchronous communication, ideal for scenarios requiring immediate feedback or acknowledgment. This package is perfect for developers aiming to build responsive, event-driven systems with Redis as the core messaging infrastructure.
 
 ## Prerequisites
 Before using this NuGet package, ensure you have Redis installed. You can either install the Redis Docker image or set up Redis on Windows. 
@@ -157,7 +157,7 @@ builder.Services.AddRedisMessageBroker("localhost:6379", (config) =>
 - `config.AddConsumer<DemoConsumer, DemoMessage>("demo-channel");`: This line adds the `DemoConsumer` class as a consumer and specifies the `DemoMessage` message class in the generic parameter for the `demo-channel`.
 - You can add multiple consumers with different channel names.
 
-### 10: Run both projects and call the `Producer` API.
+### Step 10: Run both projects and call the `Producer` API.
 To send a message from the Producer and have the Consumer receive it, you can use the following curl command:
 ```curl
 curl -X POST "http://localhost:5000/api/producer" -H "Content-Type: application/json" -d '{"message":"Your message here"}'
@@ -307,7 +307,7 @@ builder.Services.AddRedisMessageBroker("localhost:6379", (config) =>
 - `config.AddReply<DemoRequest, DemoResponse, DemoReplay>("request-channel");`: This line registers the DemoReply class as a responder for the DemoRequest and DemoResponse message types on the specified request-channel.
 - You can add multiple replys with different channel names.
 
-Step 10: Run Both Projects and Call the Request API.
+### Step 10: Run Both Projects and Call the Request API.
 To send a message from the Request API and have the Reply API receive it and send a response, you can use the following curl command:
 ```curl
 curl -X POST "http://localhost:5000/api/request" -H "Content-Type: application/json" -d '{"name":"Your name here"}'
