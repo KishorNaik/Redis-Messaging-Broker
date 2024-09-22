@@ -211,7 +211,7 @@ public class DemoResponse
     public Guid Id { get; set; }
 
     public string Name { get; set; }
-
+}
 ```
 This class will be used to encapsulate the messages that are sent and received between the Request and Reply API.
 
